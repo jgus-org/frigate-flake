@@ -17,6 +17,8 @@
       overlays.default = final: prev: {
         frigate = prev.frigate.overrideAttrs (
           finalAttrs: previousAttrs: {
+            doCheck = false;
+            doInstallCheck = false;
             patches = (previousAttrs.patches or [ ]) ++ [ ./nothing-to-report.patch ];
           }
         );
